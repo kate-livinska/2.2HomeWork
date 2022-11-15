@@ -60,6 +60,9 @@
                                     <constraint firstAttribute="width" constant="228" id="EqW-IL-GDV"/>
                                     <constraint firstAttribute="height" constant="33" id="mhF-dt-MZM"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="greenSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="2yp-S6-LQm"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5RS-GC-Ape">
                                 <rect key="frame" x="147" y="384" width="232" height="34"/>
@@ -67,6 +70,9 @@
                                     <constraint firstAttribute="height" constant="33" id="5Fo-Oc-Svz"/>
                                     <constraint firstAttribute="width" constant="228" id="eJu-rV-yKt"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="blueSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Hwa-XX-UI0"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nhk-dI-8w5">
                                 <rect key="frame" x="85" y="286" width="48" height="33"/>
@@ -104,6 +110,9 @@
                                     <constraint firstAttribute="height" constant="33" id="3nU-zR-E9H"/>
                                     <constraint firstAttribute="width" constant="228" id="QUJ-Ph-TRJ"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="redSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="pPi-wT-xlh"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -132,10 +141,19 @@
                             <constraint firstItem="NfW-Xc-mBp" firstAttribute="top" secondItem="X74-tL-gUX" secondAttribute="bottom" constant="16" id="zJ9-YX-I6k"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blueLabel" destination="RdR-th-5gf" id="7Hx-8J-JWx"/>
+                        <outlet property="blueSlider" destination="5RS-GC-Ape" id="LTN-wM-nNO"/>
+                        <outlet property="colorView" destination="agv-zR-BOR" id="nXz-5j-w6C"/>
+                        <outlet property="greenLabel" destination="RKT-XO-bDE" id="3eU-ic-osv"/>
+                        <outlet property="greenSlider" destination="NfW-Xc-mBp" id="Qw0-yZ-tOD"/>
+                        <outlet property="redLabel" destination="Nhk-dI-8w5" id="onC-C9-BEb"/>
+                        <outlet property="redSlider" destination="X74-tL-gUX" id="NEQ-e2-tEr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20.610687022900763" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="-758" y="8"/>
         </scene>
     </scenes>
     <resources>
