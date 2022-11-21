@@ -25,25 +25,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //MARK: red slider
-        redSlider.value = 1
-        redSlider.minimumValue = 1
-        redSlider.maximumValue = 255
+        setSliderValue(slider: redSlider)
         redSlider.minimumTrackTintColor = .red
         redSlider.thumbTintColor = .red
         redLabel.text = String(redSlider.value)
         
         //MARK: green slider
-        greenSlider.value = 1
-        greenSlider.minimumValue = 1
-        greenSlider.maximumValue = 255
+        setSliderValue(slider: greenSlider)
         greenSlider.minimumTrackTintColor = .green
         greenSlider.thumbTintColor = .green
         greenLabel.text = String(greenSlider.value)
         
         //MARK: blue slider
-        blueSlider.value = 1
-        blueSlider.minimumValue = 1
-        blueSlider.maximumValue = 255
+        setSliderValue(slider: blueSlider)
         blueSlider.minimumTrackTintColor = .blue
         blueSlider.thumbTintColor = .blue
         blueLabel.text = String(blueSlider.value)
@@ -70,7 +64,19 @@ class ViewController: UIViewController {
     }
     
     func setColorViewBackground() {
-        colorView.backgroundColor = UIColor(red: colorViewRed/255, green: colorViewGreen/255, blue: colorViewBlue/255, alpha: 1)
+        colorView.backgroundColor = UIColor(red: colorViewRed/255,
+                                            green: colorViewGreen/255,
+                                            blue: colorViewBlue/255,
+                                            alpha: 1)
     }
+    
+    func setSliderValue(slider: UISlider) {
+        slider.value = 0
+        slider.minimumValue = 0
+        slider.maximumValue = 255
+    }
+    
+    
 }
+
 
