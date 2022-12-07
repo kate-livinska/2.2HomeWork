@@ -24,43 +24,29 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //MARK: red slider
-        setSliderValue(slider: redSlider)
-        redSlider.minimumTrackTintColor = .red
-        redSlider.thumbTintColor = .red
-        redLabel.text = String(redSlider.value)
-        
-        //MARK: green slider
-        setSliderValue(slider: greenSlider)
-        greenSlider.minimumTrackTintColor = .green
-        greenSlider.thumbTintColor = .green
-        greenLabel.text = String(greenSlider.value)
-        
-        //MARK: blue slider
-        setSliderValue(slider: blueSlider)
-        blueSlider.minimumTrackTintColor = .blue
-        blueSlider.thumbTintColor = .blue
-        blueLabel.text = String(blueSlider.value)
-        
-        
+        colorView.layer.cornerRadius = 30
+        colorView.backgroundColor = .black
+        setSliderValue(for: redSlider, greenSlider, blueSlider)
+        setColor(for: redSlider, greenSlider, blueSlider)
+       
     }
     
-    @IBAction func redSliderAction(_ sender: Any) {
-        redLabel.text = String(Int(redSlider.value))
-        colorViewRed = CGFloat(redSlider.value)
+    @IBAction func sliderAction(_ sender: UISlider) {
+        
+        switch sender.tag {
+        case 1:
+            redLabel.text = String(Int(sender.value))
+            colorViewRed = CGFloat(sender.value)
+        case 2:
+            greenLabel.text = String(Int(sender.value))
+            colorViewGreen = CGFloat(sender.value)
+        case 3:
+            blueLabel.text = String(Int(sender.value))
+            colorViewBlue = CGFloat(sender.value)
+        default: break
+        }
         setColorViewBackground()
-    }
-    
-    @IBAction func greenSliderAction(_ sender: Any) {
-        greenLabel.text = String(Int(greenSlider.value))
-        colorViewGreen = CGFloat(greenSlider.value)
-        setColorViewBackground()
-    }
-    
-    @IBAction func blueSliderAction(_ sender: Any) {
-        blueLabel.text = String(Int(blueSlider.value))
-        colorViewBlue = CGFloat(blueSlider.value)
-        setColorViewBackground()
+        
     }
     
     func setColorViewBackground() {
@@ -70,10 +56,30 @@ class ViewController: UIViewController {
                                             alpha: 1)
     }
     
-    func setSliderValue(slider: UISlider) {
-        slider.value = 0
-        slider.minimumValue = 0
-        slider.maximumValue = 255
+    
+    func setSliderValue(for sliders: UISlider...) {
+        for slider in sliders {
+            slider.value = 0
+            slider.minimumValue = 0
+            slider.maximumValue = 255
+        }
+    }
+    
+    func setColor(for sliders: UISlider...) {
+        for slider in sliders {
+            switch slider.tag {
+            case 1:
+                slider.minimumTrackTintColor = .red
+                slider.thumbTintColor = .red
+            case 2:
+                slider.minimumTrackTintColor = .green
+                slider.thumbTintColor = .green
+            case 3:
+                slider.minimumTrackTintColor = .blue
+                slider.thumbTintColor = .blue
+            default: break
+            }
+        }
     }
     
     
